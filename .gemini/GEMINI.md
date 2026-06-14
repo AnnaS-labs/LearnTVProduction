@@ -54,17 +54,39 @@ Whenever a new session starts in any directory under the home directory `/Users/
        - Scan the files inside that subfolder. Read its primary markdown files (like `README.md`) using `view_file` to understand where things stand.
        - Summarize the current state of the project for Anna.
        - Suggest 2-3 beginner-friendly actions to take next and wait for her prompt.
-   - **If "Tutorial", "Games", or "Queeze" is selected:**
-     - Determine the corresponding folder:
-       - "Tutorial" -> `/Users/annashuvalova/tutorial`
-       - "Games" -> `/Users/annashuvalova/games`
-       - "Queeze" -> `/Users/annashuvalova/queeze`
-     - Scan the folder's existing subfolders using the `list_dir` tool.
-     - If the folder is empty or contains no subfolders:
-       - Let her know it is empty and offer to create a new folder or file to get started.
-       - Provide 2-3 specific, encouraging suggestions of what she could do in this mode.
-       - Stop and wait for her prompt.
-     - If the folder contains subfolders:
-       - Use the `ask_question` tool to offer a choice among the existing subfolders.
-       - Always be helpful, suggest what could be done, and remind her of the possibilities based on the scanned subfolders.
-       - Stop and wait for her prompt.
+    - **If "Tutorial" is selected:**
+      - Set the directory path to `/Users/annashuvalova/tutorial`.
+      - Scan the `/Users/annashuvalova/tutorial` directory's subfolders using `list_dir`.
+      - If the directory has no subfolders, automatically initialize the three default tutorials:
+        - `learn-agentic-ai` (no-coding agent concepts)
+        - `learn-macos` (basic Mac navigation & command line commands)
+        - `learn-tv-production` (filming, shots, script formats)
+        - (For each, write a `README.md` containing its curriculum and progress log, then scan the directory again).
+      - Present an interactive single-choice menu using `ask_question`:
+        - **Question**: "Hi Anna! Let's learn something new today. Which tutorial path would you like to open?"
+        - **Options**: Include all scanned tutorial subfolders (e.g. `learn-agentic-ai`, `learn-macos`, `learn-tv-production`).
+      - **When a tutorial option is selected:**
+        - Do NOT start the lesson immediately. Wait until Anna is ready.
+        - First, read the selected tutorial's `README.md` file using `view_file` to see its current level and curriculum.
+        - Describe what is possible to do in this path, suggest various actions, and explain the curriculum topics.
+        - Present a single-choice question using `ask_question`:
+          - **Question**: "Are you ready to begin the next lesson, or would you like to repeat a past lesson at a higher level?"
+          - **Options**:
+            - "Start the next lesson"
+            - "Repeat a past lesson at a higher difficulty"
+            - "Go back to select another tutorial"
+        - Explain that tutorials are unbound—they offer infinite progression and new custom-tailored topics to learn as she gains proficiency (until she becomes the master of the universe and the Vampire King!).
+        - Be creative in suggesting new concepts to explore and wait for her confirmation.
+    - **If "Games" or "Queeze" is selected:**
+      - Determine the corresponding folder:
+        - "Games" -> `/Users/annashuvalova/games`
+        - "Queeze" -> `/Users/annashuvalova/queeze`
+      - Scan the folder's existing subfolders using the `list_dir` tool.
+      - If the folder is empty or contains no subfolders:
+        - Let her know it is empty and offer to create a new folder or file to get started.
+        - Provide 2-3 specific, encouraging suggestions of what she could do in this mode.
+        - Stop and wait for her prompt.
+      - If the folder contains subfolders:
+        - Use the `ask_question` tool to offer a choice among the existing subfolders.
+        - Always be helpful, suggest what could be done, and remind her of the possibilities based on the scanned subfolders.
+        - Stop and wait for her prompt.
