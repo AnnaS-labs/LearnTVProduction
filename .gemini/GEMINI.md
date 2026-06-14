@@ -84,10 +84,12 @@ Whenever a new session starts in any directory under the home directory `/Users/
     - **If "Games" is selected:**
       - Set the directory path to `/Users/annashuvalova/games`.
       - Scan the `/Users/annashuvalova/games` directory for existing subfolders or files using `list_dir`.
-      - If the directory has no games (folders or files), automatically initialize the three default games:
+      - If the directory has no games (folders or files), automatically initialize the five default games:
         - `riddle-quest.md` (Logic & lateral thinking riddles)
         - `mystery-producer.md` (TV production interactive Choose-Your-Own-Adventure)
         - `terminal-hunt.md` (Mac terminal commands search game)
+        - `situation-puzzles.md` (Lateral thinking & yes/no mysteries)
+        - `twenty-four-game.md` (Mental math arithmetic puzzle)
         - (For each, write its initial markdown file, then scan the directory again).
       - Present an interactive single-choice menu using `ask_question`:
         - **Question**: "Hi Anna! Let's play a game. Which mind game would you like to play today?"
