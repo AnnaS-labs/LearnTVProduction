@@ -1,4 +1,8 @@
 {
+  "profile": {
+    "title": "Novice Assistant Director",
+    "badges": []
+  },
   "quizzes": {
     "tv-production-trivia": { "high_score": 0, "completed": false },
     "college-prep-essential": { "high_score": 0, "completed": false },
