@@ -3,3 +3,11 @@
 
 # Except this gitignore file
 !.gitignore
+
+# Track Antigravity rules and configurations
+!.gemini/
+.gemini/*
+!.gemini/GEMINI.md
+!.gemini/config/
+.gemini/config/*
+!.gemini/config/hooks.json
