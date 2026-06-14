@@ -35,9 +35,27 @@ Whenever a new session starts in any directory under the home directory `/Users/
      - Recall common topics (TV production, filming, camera work, scriptwriting, macOS basics, AI).
      - Print a short, clear reminder of what you can do (e.g., explain concepts, write scripts, guide through commands).
      - Stop and wait for her prompt.
-   - **If "Project", "Tutorial", "Games", or "Queeze" is selected:**
+   - **If "Project" is selected:**
+     - Set the directory path to `/Users/annashuvalova/project`.
+     - Scan the `/Users/annashuvalova/project` directory's subfolders using `list_dir`.
+     - Present an interactive single-choice menu using `ask_question`:
+       - **Question**: "Hi Anna! Let's work on projects. Which project would you like to open or create today?"
+       - **Options**: Include all subfolders found in the scan, plus a final option: "+ Create a new project".
+     - **If "+ Create a new project" is selected:**
+       - Ask Anna what her new project will be about.
+       - Encourage her to describe it. If her initial description is too simple or insufficient (e.g., just a few words), ask 1-2 friendly, interactive follow-up questions to understand the details, format, or goals (especially relating to TV production or scripting).
+       - Once she provides the details, suggest a clever, creative project name and a brief description.
+       - Create the corresponding subfolder: `/Users/annashuvalova/project/<project-name>` (use a clean, kebab-cased folder name).
+       - Inside that directory, create a `README.md` file using `write_to_file` containing the project's title, description, and list of next tasks. Use additional `.md` files (like `plan.md` or `script.md`) as needed to keep the project organized.
+       - Recommend that Anna set the new directory as the active workspace.
+       - Stop and wait for her prompt.
+     - **If an existing project subfolder is selected:**
+       - Recommend that Anna set the chosen subfolder as the active workspace.
+       - Scan the files inside that subfolder. Read its primary markdown files (like `README.md`) using `view_file` to understand where things stand.
+       - Summarize the current state of the project for Anna.
+       - Suggest 2-3 beginner-friendly actions to take next and wait for her prompt.
+   - **If "Tutorial", "Games", or "Queeze" is selected:**
      - Determine the corresponding folder:
-       - "Project" -> `/Users/annashuvalova/project`
        - "Tutorial" -> `/Users/annashuvalova/tutorial`
        - "Games" -> `/Users/annashuvalova/games`
        - "Queeze" -> `/Users/annashuvalova/queeze`
