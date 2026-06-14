@@ -1,0 +1,23 @@
+{
+  "quizzes": {
+    "tv-production-trivia": { "high_score": 0, "completed": false },
+    "college-prep-essential": { "high_score": 0, "completed": false },
+    "macos-power-user": { "high_score": 0, "completed": false }
+  },
+  "tutorials": {
+    "learn-agentic-ai": { "level": 1, "completed_lessons": [] },
+    "learn-macos": { "level": 1, "completed_lessons": [] },
+    "learn-tv-production": { "level": 1, "completed_lessons": [] },
+    "learn-video-editing": { "level": 1, "completed_lessons": [] },
+    "learn-screenwriting": { "level": 1, "completed_lessons": [] },
+    "learn-audio-production": { "level": 1, "completed_lessons": [] },
+    "learn-lighting-color": { "level": 1, "completed_lessons": [] }
+  },
+  "games": {
+    "riddle-quest": { "high_score": 0 },
+    "mystery-producer": { "completed": false },
+    "terminal-hunt": { "completed": false },
+    "situation-puzzles": { "completed": false },
+    "twenty-four-game": { "high_score": 0 }
+  }
+}

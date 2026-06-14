@@ -8,6 +8,7 @@
 !.gemini/
 .gemini/*
 !.gemini/GEMINI.md
+!.gemini/progress.json
 !.gemini/config/
 .gemini/config/*
 !.gemini/config/hooks.json
