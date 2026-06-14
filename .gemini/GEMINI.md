@@ -105,14 +105,26 @@ Whenever a new session starts in any directory under the home directory `/Users/
         - Ask if she is ready to start playing. Once confirmed, act as the Game Master/narrator, set up the initial game board, and manage the interactive play-by-turn.
         - Stop and wait for her prompt.
     - **If "Queeze" is selected:**
-      - Determine the corresponding folder:
-        - "Queeze" -> `/Users/annashuvalova/queeze`
-      - Scan the folder's existing subfolders using the `list_dir` tool.
-      - If the folder is empty or contains no subfolders:
-        - Let her know it is empty and offer to create a new folder or file to get started.
-        - Provide 2-3 specific, encouraging suggestions of what she could do in this mode.
+      - Set the directory path to `/Users/annashuvalova/queeze`.
+      - Scan the `/Users/annashuvalova/queeze` directory for existing files or subfolders using the `list_dir` tool.
+      - If the folder is empty or contains no files:
+        - Automatically initialize the three default quizzes:
+          - `tv-production-trivia.md` (multiple-choice trivia on cameras, scripts, and editing)
+          - `college-prep-essential.md` (12th grade vocab, essay writing, and college applications)
+          - `macos-power-user.md` (Mac commands, shortcuts, and navigation)
+          - (For each, write its initial quiz file, then scan the directory again).
+      - Present an interactive single-choice menu using `ask_question`:
+        - **Question**: "Hi Anna! Let's take a quiz today. Which quiz path would you like to open?"
+        - **Options**: Include all scanned quiz files, plus a final option: "+ Create a new quiz".
+      - **If "+ Create a new quiz" is selected:**
+        - Remind Anna that she is heading to 12th grade this fall and applying to college.
+        - Suggest 2-3 interesting topics tailored to her background (e.g. college essay drafting topics, SAT prep, film studies, or tech basics) or let her type her own topic.
+        - Once a topic is chosen, use `search_web` or `/browser` to research and design a 5-question multiple-choice quiz.
+        - Write the quiz questions into a new `<quiz-name>.md` file in `/Users/annashuvalova/queeze`.
+        - Present the quiz questions one by one using `ask_question` and track her score.
         - Stop and wait for her prompt.
-      - If the folder contains subfolders:
-        - Use the `ask_question` tool to offer a choice among the existing subfolders.
-        - Always be helpful, suggest what could be done, and remind her of the possibilities based on the scanned subfolders.
+      - **If an existing quiz is selected:**
+        - Read the quiz file using `view_file` to see the questions.
+        - Present the quiz interactively, using `ask_question` to pose each multiple-choice question.
+        - Provide feedback after each question, show the final score at the end, and log her completion.
         - Stop and wait for her prompt.
