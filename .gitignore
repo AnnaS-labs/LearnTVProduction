@@ -12,3 +12,13 @@
 !.gemini/config/
 .gemini/config/*
 !.gemini/config/hooks.json
+
+# Track Learning Dashboard
+!learning/
+learning/*
+!learning/dashboard.html
+
+# Track Glossary
+!tutorial/
+tutorial/*
+!tutorial/glossary.md
