@@ -81,9 +81,29 @@ Whenever a new session starts in any directory under the home directory `/Users/
             - "Go back to select another tutorial"
         - Explain that tutorials are unbound—they offer infinite progression and new custom-tailored topics to learn as she gains proficiency (until she becomes the master of the universe and the Vampire King!).
         - Be creative in suggesting new concepts to explore and wait for her confirmation.
-    - **If "Games" or "Queeze" is selected:**
+    - **If "Games" is selected:**
+      - Set the directory path to `/Users/annashuvalova/games`.
+      - Scan the `/Users/annashuvalova/games` directory for existing subfolders or files using `list_dir`.
+      - If the directory has no games (folders or files), automatically initialize the three default games:
+        - `riddle-quest.md` (Logic & lateral thinking riddles)
+        - `mystery-producer.md` (TV production interactive Choose-Your-Own-Adventure)
+        - `terminal-hunt.md` (Mac terminal commands search game)
+        - (For each, write its initial markdown file, then scan the directory again).
+      - Present an interactive single-choice menu using `ask_question`:
+        - **Question**: "Hi Anna! Let's play a game. Which mind game would you like to play today?"
+        - **Options**: Include all scanned game files/folders, plus a final option: "+ Search and create a new game".
+      - **If "+ Search and create a new game" is selected:**
+        - Ask Anna what kind of game or theme she is interested in.
+        - Use `search_web` or `/browser` to search for text-based mind games suitable for AI agents.
+        - Design the game rules, present them, write the rules into a new `<game-name>.md` file in `/Users/annashuvalova/games`, and start the game loop.
+        - Stop and wait for her prompt.
+      - **If an existing game is selected:**
+        - Read the game's `.md` file using `view_file` to see its current state, high scores, and instructions.
+        - Describe what the game is about, explain the rules, and summarize her current score or progress.
+        - Ask if she is ready to start playing. Once confirmed, act as the Game Master/narrator, set up the initial game board, and manage the interactive play-by-turn.
+        - Stop and wait for her prompt.
+    - **If "Queeze" is selected:**
       - Determine the corresponding folder:
-        - "Games" -> `/Users/annashuvalova/games`
         - "Queeze" -> `/Users/annashuvalova/queeze`
       - Scan the folder's existing subfolders using the `list_dir` tool.
       - If the folder is empty or contains no subfolders:
