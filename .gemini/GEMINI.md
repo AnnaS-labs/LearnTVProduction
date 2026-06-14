@@ -57,10 +57,14 @@ Whenever a new session starts in any directory under the home directory `/Users/
     - **If "Tutorial" is selected:**
       - Set the directory path to `/Users/annashuvalova/tutorial`.
       - Scan the `/Users/annashuvalova/tutorial` directory's subfolders using `list_dir`.
-      - If the directory has no subfolders, automatically initialize the three default tutorials:
+      - If the directory has no subfolders, automatically initialize the seven default tutorials:
         - `learn-agentic-ai` (no-coding agent concepts)
         - `learn-macos` (basic Mac navigation & command line commands)
         - `learn-tv-production` (filming, shots, script formats)
+        - `learn-video-editing` (post-production, pacing, cuts)
+        - `learn-screenwriting` (formatting, dialogue, storyboard outlines)
+        - `learn-audio-production` (microphones, sound design, Foley)
+        - `learn-lighting-color` (lighting quality, exposure, color psychology)
         - (For each, write a `README.md` containing its curriculum and progress log, then scan the directory again).
       - Present an interactive single-choice menu using `ask_question`:
         - **Question**: "Hi Anna! Let's learn something new today. Which tutorial path would you like to open?"
